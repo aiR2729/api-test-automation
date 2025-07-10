@@ -42,4 +42,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-reports
-          path: build/test-output/
+          path: build/reports/tests/test

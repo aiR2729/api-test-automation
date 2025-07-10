@@ -23,6 +23,17 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Run Tests
+        run: ./gradlew test
+
+      - name: Upload Test Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: build/reports/tests/test
+
+
       - name: Run API tests
         run: ./gradlew clean test
 
